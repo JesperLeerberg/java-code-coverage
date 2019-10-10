@@ -1,26 +1,21 @@
-group 'org.jacoco'
-version '1.0-SNAPSHOT'
+plugins {
+  id "org.sonarqube" version "2.7.1"
+}
 
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'junit:junit:4.12'
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.destination "${buildDir}/reports/jacoco"
+sonarqube {
+    properties {
+        property "sonar.projectName", "Java Gradle-based project analyzed on SonarCloud using Travis"
+        property "sonar.projectKey", "com.sonarqube.examples.java-gradle-travis-project"
     }
 }
-
-check.dependsOn jacocoTestReport

@@ -20,6 +20,9 @@ gradle-app.setting
 *.eml
 out/
 
+## VSCODE ##
+.vscode
+
 ### Java ###
 *.class
 classes/
