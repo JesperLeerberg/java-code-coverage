@@ -2,22 +2,26 @@ package org.jacoco.examples.java.gradle;
 
 import javax.crypto.KeyGenerator;
 import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
 
 public class HelloWorld {
-	
+	private KeyPairGenerator keyPairGen = null;
+
 	public String getMessage(boolean bigger) {
-		if (bigger) {
-			return "Hello Universe!";
-		} else {
-			return "Hello World!";
-		}
 
-		KeyGenerator keyGen = KeyGenerator.getInstance("Blowfish");
-		keyGen.init(64); // Noncompliant
+        try {
+            keyPairGen = KeyPairGenerator.getInstance("RSA");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        keyPairGen.initialize(512); // Noncompliant
 
-		KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-		keyPairGen.initialize(512); // Noncompliant
-	}
+        if (bigger) {
+            return "Hello Universe!";
+        } else {
+            return "Hello World!";
+        }
+    }
 
 	public void speech() {
 		String speech = "Now is the time for all good people to come to the aid of their country.";
