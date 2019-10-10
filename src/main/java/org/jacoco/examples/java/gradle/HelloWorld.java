@@ -1,5 +1,8 @@
 package org.jacoco.examples.java.gradle;
 
+import javax.crypto.KeyGenerator;
+import java.security.KeyPairGenerator;
+
 public class HelloWorld {
 	
 	public String getMessage(boolean bigger) {
@@ -8,6 +11,12 @@ public class HelloWorld {
 		} else {
 			return "Hello World!";
 		}
+
+		KeyGenerator keyGen = KeyGenerator.getInstance("Blowfish");
+		keyGen.init(64); // Noncompliant
+
+		KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
+		keyPairGen.initialize(512); // Noncompliant
 	}
 
 	public void speech() {
@@ -19,5 +28,4 @@ public class HelloWorld {
 
 		System.out.println(substr2);
 	}
-
 }

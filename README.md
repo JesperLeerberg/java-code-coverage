@@ -1,5 +1,7 @@
 # java-code-coverage
 
+[![CircleCI](https://circleci.com/gh/leerberg/java-code-coverage.svg?style=svg)](https://circleci.com/gh/leerberg/java-code-coverage)
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=leerberg_java-code-coverage&metric=alert_status)](https://sonarcloud.io/dashboard?id=leerberg_java-code-coverage)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=leerberg_java-code-coverage&metric=bugs)](https://sonarcloud.io/dashboard?id=leerberg_java-code-coverage)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=leerberg_java-code-coverage&metric=code_smells)](https://sonarcloud.io/dashboard?id=leerberg_java-code-coverage)
