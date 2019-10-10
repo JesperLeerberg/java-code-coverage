@@ -16,6 +16,10 @@ public class HelloWorld {
         }
         keyPairGen.initialize(512); // Noncompliant
 
+        String jesper = "jesper";
+
+        jesper = "jesper";
+
         if (bigger) {
             return "Hello Universe!";
         } else {
