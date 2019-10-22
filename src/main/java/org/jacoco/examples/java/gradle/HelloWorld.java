@@ -19,7 +19,7 @@ public class HelloWorld {
         System.out.println("Test");
 
         if (bigger) {
-            return "Hello Universe! test";
+            return "Hello Universe!";
         } else {
             return "Hello World!";
         }
